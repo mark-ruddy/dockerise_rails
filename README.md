@@ -9,10 +9,10 @@ config.hosts << "mini-blog-dev.eu-west-1.elasticbeanstalk.com"
 config.webpacker.check_yarn_integrity = false
 ```
 
-Add `database.yml` to `/config/database.yml`
-Add `Dockerfile` to root
-Add `docker-compose.yml` to root
-add `entrypoint.sh` to root
+Add `database.yml` to `/config/database.yml`  
+Add `Dockerfile` to root  
+Add `docker-compose.yml` to root  
+add `entrypoint.sh` to root  
 
 ## Keys
 
