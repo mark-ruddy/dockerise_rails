@@ -14,6 +14,6 @@ services:
       - .:/my_app
       - /my_app/node_modules
     ports:
-      - "3000:3000"
+      - "80:80"
     depends_on:
       - db

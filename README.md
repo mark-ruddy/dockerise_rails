@@ -9,7 +9,7 @@ docker-compose up
 If you receive a credentials error you can regenerate keys with `EDITOR=vim bundle exec rails credentials:edit`
 
 The app can be run in this docker container on AWS Elastic Beanstalk after allowing the host in `/config/environments/<ENVIRONMENT_BEING_USED>`
-If hosting online you may want to change the port from 3000 to 80/443 in `docker-compose.yml` and `Dockerfile`
+The port is currently set to 80, this can be changed in `Dockerfile` and `docker-compose.yml`
 ```
 config.hosts << "mini-blog-dev.eu-west-1.elasticbeanstalk.com"  
 config.webpacker.check_yarn_integrity = false
