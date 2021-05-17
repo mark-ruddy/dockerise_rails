@@ -1,19 +1,17 @@
-# dockerise_rails
+Quick way to dockerise a Postgresql Rails 6 app  
+`./dockerise <PATH_TO_RAILS_ROOT_DIR>`
 
-To dockerise a Rails 5.2+ app with Postgres database.
+Now the app can be run anywhere with the following commands:
+```
+docker-compose build
+docker-compose up
+```
+If you receive a credentials error you can regenerate keys with `EDITOR=vim bundle exec rails credentials:edit`
 
-Add the following to the `/config/environments/<environment_to_run>`
-
+The app can be run in this docker container on AWS Elastic Beanstalk after allowing the host in `/config/environments/<ENVIRONMENT_BEING_USED>`
 ```
 config.hosts << "mini-blog-dev.eu-west-1.elasticbeanstalk.com"  
 config.webpacker.check_yarn_integrity = false
 ```
-
-Add `database.yml` to `/config/database.yml`  
-Add `Dockerfile` to root  
-Add `docker-compose.yml` to root  
-add `entrypoint.sh` to root  
-
-## Keys
-
-Run `EDITOR=vim rails credentials:edit` and `wq`
+To undockerise the app  `./undockerise <PATH_TO_RAILS_ROOT_DIR>`  
+After undockerising `/config/database.yml` will need to be updated with the correct database names
